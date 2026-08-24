@@ -5,23 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Crossbar Challenge</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem;
-    color: #1a1a1a; background: #fff;
+  /* Every colour is a token defined here, on bare :root, and only re-pointed
+     inside the dark block. Nothing gets its ONLY definition in a media query,
+     which is what stops a value going missing in one theme.
+
+     There are deliberately no filled backgrounds anywhere except the page
+     itself: a tinted <code> bubble that reads fine on white turns into a pale
+     slab of unreadable text the moment the page is dark. Monospace alone is
+     enough to mark a package name. */
+  :root {
+    color-scheme: light dark;
+    --bg:    #ffffff;
+    --fg:    #1a1c1e;
+    --muted: #5a6068;
+    --link:  #0b57d0;
+    --rule:  #d5d9de;
   }
   @media (prefers-color-scheme: dark) {
-    body { color: #e6e6e6; background: #16181d; }
-    a { color: #7fb2ff; }
-    code { background: #24272e; }
+    :root {
+      --bg:    #16181d;
+      --fg:    #e6e8eb;
+      --muted: #a2a9b0;
+      --link:  #8ab4f8;
+      --rule:  #363b42;
+    }
   }
-  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
-  h2 { font-size: 1.2rem; margin-top: 2.25rem; }
-  .sub { color: #666; margin-top: 0; }
-  code { background: #f2f3f5; padding: .1em .35em; border-radius: 3px; font-size: .9em; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #8883; vertical-align: top; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem;
+    color: var(--fg); background: var(--bg);
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin-bottom: .25rem; }
+  h2 { font-size: 1.2rem; margin-top: 2.5rem; }
+  .sub { color: var(--muted); margin-top: 0; }
+  a { color: var(--link); }
+  strong { color: var(--fg); }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .92em;
+    background: none;
+    padding: 0;
+    word-break: break-all;
+  }
+  ul { padding-left: 1.25rem; }
+  li { margin: .35rem 0; }
+  /* Wide tables scroll inside themselves rather than pushing the page sideways. */
+  .tw { overflow-x: auto; margin: 1rem 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 22rem; }
+  th, td {
+    text-align: left; padding: .55rem .6rem;
+    border-bottom: 1px solid var(--rule); vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; font-size: .9em;
+       text-transform: uppercase; letter-spacing: .03em; }
 </style>
 </head>
 <body>
@@ -70,12 +107,12 @@ level that turns out to be unfairly hard.</p>
 
 <p>The Game sends exactly three kinds of event, and each carries at most two
 numbers:</p>
-<table>
+<div class="tw"><table>
   <tr><th>Event</th><th>What it carries</th></tr>
   <tr><td><code>level_start</code></td><td>the level number</td></tr>
   <tr><td><code>level_complete</code></td><td>the level number, and how many attempts it took</td></tr>
   <tr><td><code>ad_shown</code></td><td>nothing</td></tr>
-</table>
+</table></div>
 
 <p>Firebase itself adds, automatically and on its own: an app instance
 identifier (a random id belonging to this installation, not to you &mdash;
@@ -104,7 +141,7 @@ complete. Advertisements are served by <strong>Google AdMob</strong>, which is
 operated by Google. To do that, the Google Mobile Ads SDK included in the Game
 may collect and process:</p>
 
-<table>
+<div class="tw"><table>
   <tr><th>What</th><th>Why</th></tr>
   <tr>
     <td><strong>Identifiers</strong> &mdash; your device&rsquo;s advertising ID
@@ -132,7 +169,7 @@ may collect and process:</p>
     <td>To serve advertisements the device can display, and to detect
         fraudulent or invalid traffic</td>
   </tr>
-</table>
+</table></div>
 
 <p>Google states that this information is encrypted in transit using TLS.</p>
 
