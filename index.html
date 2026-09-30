@@ -65,7 +65,7 @@
 
 <h1>Privacy Policy</h1>
 <p class="sub">Crossbar Challenge &middot; Android &middot; Last updated:
-24 August 2026</p>
+1 October 2026</p>
 
 <p>This policy explains what Crossbar Challenge (the &ldquo;Game&rdquo;,
 package <code>com.yassin.crossbarchallenge</code>) does and does not do with
@@ -77,27 +77,54 @@ Play.</p>
 
 <h2>The short version</h2>
 <p>There is no account, no login and no registration, and we never learn who
-you are. Your progress is saved on your own device and never leaves it. Two
-Google services inside the Game do collect some information: <strong>Google
+you are. Your progress is saved on your own device and never leaves it. A few
+features talk to our own small server and send only what they need to work
+(the leaderboard, polls, inviting friends and playing with friends online).
+Two Google services inside the Game also collect some information: <strong>Google
 AdMob</strong>, which shows the advertisements, and <strong>Google Firebase
 Analytics</strong>, which tells us how far players get in the game. Neither is
 given your name, your email or any way for us to identify you. Everything below
 is the detail.</p>
 
 <h2>Information we collect ourselves</h2>
-<p><strong>None directly.</strong> We operate no servers and we have no
-database. We never receive your name, email address, phone number, contacts,
-photos, files or precise location, and the Game never asks you for any of
-them.</p>
-<p>What we do receive are the two Google dashboards described below, which show
-us totals and averages &mdash; how many people played, how far they got, how
-many advertisements were shown &mdash; and never an individual person.</p>
+<p>There are no accounts. We never receive your real name, email address,
+phone number, contacts, photos, files or location, and the Game never asks you
+for any of them.</p>
+<p>A few features talk to our own small server, which runs on Cloudflare, and
+send only what they need:</p>
+<ul>
+  <li><strong>The Long Walk leaderboard:</strong> the nickname and country you
+      choose, your daily scores, and a random ID made for this installation so
+      your scores stay together. Your nickname, country and scores are shown to
+      other players on the leaderboard.</li>
+  <li><strong>Polls in the inbox:</strong> your answer and a random ID for this
+      installation, so each phone votes once.</li>
+  <li><strong>Inviting friends:</strong> your invite code is made from a
+      scrambled (one-way hashed) form of your device&rsquo;s Android ID &mdash;
+      the ID itself never leaves your phone. When a friend installs the Game
+      from your link, Google Play tells their Game which link it came from,
+      and their Game sends that code and the same kind of scrambled ID for
+      their phone, so each phone counts once. When someone opens an invite
+      link, we count it using a short scrambled form of their internet address
+      and browser, kept per day; the address itself is not stored.</li>
+  <li><strong>Playing with friends online:</strong> while you are in a room,
+      the name you play under and your moves pass through our server to the
+      other players. Nothing from a room is stored after it closes.</li>
+</ul>
+<p>None of this identifies you as a person, and we never sell it or share it
+with anyone else. The Game also downloads its news and pictures from our site
+on GitHub Pages; like any website, GitHub sees the internet address that
+asks.</p>
+<p>We also see the two Google dashboards described below, which show us totals
+and averages &mdash; how many people played, how far they got, how many
+advertisements were shown &mdash; and never an individual person.</p>
 
 <h2>Information stored on your device</h2>
-<p>The Game saves one number on your device: the highest level you have
-unlocked. It is written to the Game&rsquo;s own private storage area, it is not
-readable by other apps, and it is not transmitted anywhere. Uninstalling the
-Game deletes it. There is no cloud save and no backup.</p>
+<p>The Game saves your progress, your settings and your inbox (which posts you
+have read, and any free skips) on your device. They are written to the
+Game&rsquo;s own private storage area, are not readable by other apps, and are
+not transmitted anywhere. Uninstalling the Game deletes them. There is no cloud
+save and no backup.</p>
 
 <h2>Analytics</h2>
 <p>The Game uses <strong>Google Firebase Analytics</strong> to tell us whether
@@ -220,11 +247,14 @@ the components it includes:</p>
 contacts, photos, files, or any other sensitive permission.</p>
 
 <h2>Data retention and deletion</h2>
-<p>We hold no records that identify you, so there is no account to close and no
-personal file to delete. Concretely:</p>
+<p>We hold no records that identify you as a person, so there is no account to
+close. Concretely:</p>
 <ul>
-  <li><strong>On your device:</strong> the single saved number is removed when
-      you uninstall the Game or clear its data.</li>
+  <li><strong>On your device:</strong> everything the Game saved is removed
+      when you uninstall the Game or clear its data.</li>
+  <li><strong>Our server:</strong> leaderboard entries, poll answers and invite
+      counts are kept while those features exist. To have yours removed, write
+      to the address below with your leaderboard nickname or invite code.</li>
   <li><strong>Analytics:</strong> uninstalling the Game, or clearing its data,
       discards the app instance identifier, after which nothing further is
       recorded and the old events cannot be connected to any new ones. Events
